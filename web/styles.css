@@ -1,0 +1,180 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap");
+@import url("https://use.fontawesome.com/releases/v5.15.4/css/all.css");
+
+:root {
+  --font-family: "Poppins", sans-serif;
+  --text-color: #e8ded1;
+  --accent-color: #e8ded1;
+
+  --bg-color: rgba(34, 25, 20, 0.9);
+  --hover-bg-color: rgba(255, 255, 255, 0.07);
+  --border-radius: 6px;
+
+  --font-size-msg: 0.9rem;
+  --font-size-input: 1rem;
+  --shadow-light: rgba(0, 0, 0, 0.3);
+  --shadow-dark: rgba(0, 0, 0, 0.6);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#app {
+  font-family: var(--font-family);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--text-color);
+  background-color: transparent;
+  overflow: hidden;
+}
+
+.chat-window {
+  position: absolute;
+  top: 2%;
+  left: 1%;
+  width: 38%;
+  max-width: 580px;
+  height: 350px;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.chat-messages {
+  max-height: 100%;
+  overflow-y: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.chat-messages::-webkit-scrollbar {
+  display: none;
+}
+
+.msg {
+  background-color: var(--bg-color);
+  padding: 0.6rem 1rem;
+  margin-bottom: 0.4rem;
+  border-radius: var(--border-radius);
+  border-left: 3px solid var(--accent-color);
+  font-size: var(--font-size-msg);
+  font-weight: 500;
+  line-height: 1.5;
+  box-shadow: 0 2px 5px var(--shadow-dark);
+  animation: slideInFromLeft 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  overflow-wrap: break-word;
+  word-break: break-all;
+}
+
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.msg.multiline {
+  white-space: pre-wrap;
+}
+
+span,
+em,
+b,
+small,
+p {
+  color: var(--text-color) !important;
+  overflow-wrap: break-word;
+  word-break: break-all;
+  white-space: normal;
+}
+
+em {
+  font-style: normal;
+  font-weight: 600;
+}
+
+.chat-input {
+  position: absolute;
+  top: calc(2% + 360px);
+  left: 1%;
+  width: 38%;
+  max-width: 580px;
+}
+
+.chat-input input {
+  width: 100%;
+  font-size: var(--font-size-input);
+  font-weight: 500;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  border: 1px solid transparent;
+  border-radius: var(--border-radius);
+  padding: 0.8rem 1rem;
+  box-shadow: 0 2px 5px var(--shadow-dark);
+  transition: all 0.2s ease-in-out;
+}
+
+.chat-input input:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 8px -1px var(--accent-color);
+}
+
+.chat-input input::placeholder {
+  color: var(--text-color);
+  opacity: 0.5;
+}
+
+.prefix {
+  display: none;
+}
+
+.suggestions-wrap {
+  margin-top: 0.5rem;
+  background-color: var(--bg-color);
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 10px var(--shadow-dark);
+  padding: 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.suggestions {
+  list-style-type: none;
+}
+
+.suggestion {
+  padding: 0.7rem;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.suggestion:hover {
+  background-color: var(--hover-bg-color);
+}
+
+.suggestion p {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.suggestion .param {
+  opacity: 0.7;
+  margin-left: 0.4rem;
+}
+
+.suggestion .disabled {
+  opacity: 0.5;
+}
+
+.help {
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
