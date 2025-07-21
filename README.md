@@ -1,6 +1,6 @@
-# Dan‑Chat RedM Script for RSG Framework
+# Dan‑Chat RedM Script for RSG Framework 
 
-**A customizable chat system for RedM**
+**A customizable chat system for RedM special for RSG Framework**
 ## ⚙️ Features
 
 - 🎨 Customizable chat bubbles (text color, background, border)  
