@@ -1,4 +1,4 @@
-# Dan‑Chat RedM Script 
+# Dan‑Chat RedM Script for RSG Framework
 
 **A customizable chat system for RedM**
 ## ⚙️ Features
